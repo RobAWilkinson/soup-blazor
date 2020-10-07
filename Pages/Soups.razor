@@ -1,0 +1,35 @@
+@page "/soups"
+
+@using BlazorApp.Data
+@inject SoupService appleService
+
+
+<h1>Soups in Stock bruh</h1>
+
+<ul>
+  @foreach(var soup in soups) 
+  {
+    <li>@soup</li>
+  }
+</ul>
+
+<EditForm Model="@exampleSoup" OnValidSubmit="@HandleSubmit">
+  <DataAnnotationsValidator></DataAnnotationsValidator>
+  <ValidationSummary></ValidationSummary>
+  <InputText id="name" @bind-Value="@exampleSoup.Name" ></InputText>
+  <InputSelect id="hotOrCold" @bind-Value="@exampleSoup.HotCold">
+  <option value="hot">Hot</option>
+  <option value="cold">Cold</option>
+  </InputSelect>
+  <button type="submit">Submit</button>
+</EditForm>
+@code {
+  private Soup exampleSoup = new Soup();
+  private string[] soups { get; set;} = new [] {
+    "Chicken",
+    "Tomato"
+  };
+  private void HandleSubmit() {
+
+  }
+}

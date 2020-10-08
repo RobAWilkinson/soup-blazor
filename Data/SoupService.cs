@@ -1,6 +1,8 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Collections;
+using System.Collections.Generic;
 
 
 namespace BlazorApp.Data
@@ -13,7 +15,7 @@ namespace BlazorApp.Data
           "Tomato",
           "Cheedar Brocolli"
         };
-        public Task<string[]> GetSoupAsync() {
+        public Task<List<string>> GetSoupAsync() {
           return Task.FromResult(Soups);
         }
 

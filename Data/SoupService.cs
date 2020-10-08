@@ -10,12 +10,12 @@ namespace BlazorApp.Data
    public class SoupService
     {
       private static List<int> list = new List<int>();
-        private static List<string> Soups = new List<string>() {
-          "Chicken Noodle",
-          "Tomato",
-          "Cheedar Brocolli"
+        private static List<Soup> Soups = new List<Soup>() {
+          new Soup("Chicken Noodle", "Hot"),
+          new Soup("Tomato", "hot"),
+          new Soup("Cheddar Brocolli", "hot")
         };
-        public Task<List<string>> GetSoupAsync() {
+        public Task<List<Soup>> GetSoupAsync() {
           return Task.FromResult(Soups);
         }
 

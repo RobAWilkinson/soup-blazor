@@ -9,4 +9,8 @@ public class Soup
     [Required]
     [RegularExpression(@"/hot|cold")]
     public string HotCold { get; set; }
+    public Soup(string name, string hotCold) {
+        Name = name;
+        HotCold = hotCold;
+    }
 }
